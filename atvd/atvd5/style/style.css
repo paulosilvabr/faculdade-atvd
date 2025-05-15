@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+/* ID */
+#main_title {
+  text-align: center;
+  
+}
+
+/* Classes */
+.album {
+  display: block;
+  max-width: 225px;
+  margin: auto;
+}
+
+.band {
+  max-width: 700px;
+  margin: 40px auto;
+}
+
+/* Tags */
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: justify;
+}
+
+nav {
+  text-align: center;
+}
+
+a {
+  margin: auto 20px;
+  text-decoration: none;
+  color: black;
+}
+
+p {
+  line-height: 1.7em;
+}
+
+ol, ul {
+  columns: 2;
+  column-gap: 45px;
+  line-height: 25px;
+  list-style-position: inside;
+}
+
+table {
+  width: 60em;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+table,
+th, td {
+  border: 1px solid #333;
+}
+
+th, td {
+  padding: 8px;
+}
+
+th {
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
