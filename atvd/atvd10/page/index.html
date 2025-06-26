@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../Favicon/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../style/style.css">
+    <title>Sistema de Inteligência Policial Estadual</title>
+</head>
+<body>
+    <header>
+        <h1>Policia Federal do Tocantins</h1>
+        <p>"Servir bem servido, preservando o Direito e a Ordem, deste povo feliz e aguerrido, que abjura com horror a desordem"</p>
+        <img src="../Favicon/favicon.png" alt="Lodo da Policia Federal">
+    </header>
+    <main>
+    <h1>Sistema de Dossiê de Detentos Penitenciário de Palmas</h1>
+
+    <p>O Sistema de Dossiê de Detentos Penitenciário de Palmas tem como finalidade o gerenciamento centralizado das informações individuais dos custodiados no âmbito da unidade prisional.</p>
+    <p>A plataforma permite o registro padronizado de dados pessoais, processuais e penitenciários, assegurando a integridade, a confidencialidade e a rastreabilidade das informações.</p>
+    <p>O sistema visa atender às diretrizes de controle e fiscalização estabelecidas pelos órgãos de segurança pública e justiça, promovendo maior eficiência na administração penitenciária, além de contribuir para a tomada de decisões estratégicas relacionadas à execução penal.</p>
+
+    <h2>Cadastro do Detento</h2>
+    <form action="database.php" method="post" autocomplete="off">
+        <fieldset>
+            <legend>Identificação</legend>
+            <div>
+                <label for="foto">Insira uma foto:</label>
+                <input type="file" name="foto" id="foto" accept="image/*" required>
+            </div>
+
+            <div>
+                <label for="nome">Nome completo:</label>
+                <input type="text" name="nome" id="nome" required>
+            </div>
+
+            <div>
+                <label for="nmsocial">Nome social:</label>
+                <input type="text" name="nmsocial" id="nmsocial">
+            </div>
+
+            <div>
+                <label for="apelido">Apelidos conhecidos:</label>
+                <input type="text" name="apelido" id="apelido">
+            </div>
+
+            <div>
+                <label for="nascimento">Data de nascimento:</label>
+                <input type="date" name="nascimento" id="nascimento" required>
+            </div>
+
+            <div>
+                <label for="idade">Idade:</label>
+                <input type="number" name="idade" id="idade" required max="100" min="12">
+            </div>
+
+            <div>
+                <span>Sexo:</span>
+                <label class="sexo"><input type="radio" name="sexo" value="M" required> Masculino</label>
+                <label class="sexo"><input type="radio" name="sexo" value="F"> Feminino</label>
+                <label class="sexo"><input type="radio" name="sexo" value="O"> Outro</label>
+            </div>
+
+            <div>
+                <label for="nomepai">Nome do pai:</label>
+                <input type="text" name="nomepai" id="nomepai">
+            </div>
+
+            <div>
+                <label for="nomemae">Nome da mãe:</label>
+                <input type="text" name="nomemae" id="nomemae" required>
+                
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Documentação</legend>
+            <div>
+                <label for="rg">RG:</label>
+                <input type="number" name="rg" id="rg" maxlength="12" pattern="\d{5,12}" required>
+            </div>
+
+            <div>
+                <label for="cpf">CPF:</label>
+                <input type="number" name="cpf" id="cpf" maxlength="11" pattern="\d{11}" required>
+            </div>
+
+            <div>
+                <label for="npp">Número do prontuário penal:</label>
+                <input type="number" name="npp" id="npp" required>
+            </div>
+
+            <div>
+                <label for="nmp">Matrícula penitenciária:</label>
+                <input type="number" name="nmp" id="nmp" maxlength="7" pattern="\d{7}" required>
+            </div>
+
+            <div>
+                <label for="titeleitor">Título de eleitor:</label>
+                <input type="number" name="titeleitor" id="titeleitor" maxlength="12" pattern="\d{12}">
+            </div>
+
+            <div>
+                <label for="cnh">CNH:</label>
+                <input type="number" name="cnh" id="cnh" maxlength="11" pattern="\d{11}">
+            </div>
+
+            <div>
+                <label for="nispis">NIS/PIS:</label>
+                <input type="number" name="nispis" id="nispis" maxlength="11" pattern="\d{11}">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Endereço anterior à prisão</legend>
+            <div>
+                <label for="logradouro">Logradouro:</label>
+                <input type="text" name="logradouro" id="logradouro">
+            </div>
+
+            <div>
+                <label for="numero">Número:</label>
+                <input type="number" name="numero" id="numero">
+            </div>
+
+            <div>
+                <label for="complemento">Complemento:</label>
+                <input type="text" name="complemento" id="complemento">
+            </div>
+
+            <div>
+                <label for="bairro">Bairro:</label>
+                <input type="text" name="bairro" id="bairro">
+            </div>
+
+            <div>
+                <label for="cidade">Cidade:</label>
+                <input type="text" name="cidade" id="cidade">
+            </div>
+
+            <div>
+                <label for="estado">Estado:</label>
+                <select name="estado" id="estado">
+                    <option value="">Selecione</option>
+                    <option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option>
+                    <option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option>
+                    <option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option>
+                    <option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option>
+                    <option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option>
+                    <option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option>
+                    <option value="RJ">RJ</option><option value="RN">RN</option><option value="RS">RS</option>
+                    <option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option>
+                    <option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="cep">CEP:</label>
+                <input type="number" name="cep" id="cep" pattern="\d{5}-?\d{3}">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Dados penitenciários</legend>
+            <div>
+                <label for="data_ingresso">Data de ingresso:</label>
+                <input type="date" name="data_ingresso" id="data_ingresso" required>
+            </div>
+
+            <div>
+                <label for="regime">Regime prisional:</label>
+                <select name="regime" id="regime" required>
+                    <option value="Fechado">Fechado</option>
+                    <option value="Semiaberto">Semiaberto</option>
+                    <option value="Aberto">Aberto</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="situacao">Situação atual:</label>
+                <select name="situacao" id="situacao">
+                    <option value="Custodiado">Custodiado</option>
+                    <option value="Transferido">Transferido</option>
+                    <option value="Em liberdade">Em liberdade</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="unidade_origem">Unidade de origem (se transferido):</label>
+                <input type="text" name="unidade_origem" id="unidade_origem">
+            </div>
+
+            <div>
+                <label for="setor">Setor / pavilhão:</label>
+                <input type="text" name="setor" id="setor">
+            </div>
+
+            <div>
+                <label for="cela">Número da cela:</label>
+                <input type="number" name="cela" id="cela">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Dados processuais</legend>
+            <div>
+                <label for="nproc">Número do processo:</label>
+                <input type="number" name="nproc" id="nproc" required>
+            </div>
+
+            <div>
+                <label for="vara">Vara responsável:</label>
+                <input type="text" name="vara" id="vara">
+            </div>
+
+            <div>
+                <label for="comarca">Comarca:</label>
+                <input type="text" name="comarca" id="comarca">
+            </div>
+
+            <div>
+                <label for="situacao_proc">Situação processual:</label>
+                <select name="situacao_proc" id="situacao_proc">
+                    <option value="Condenado">Condenado</option>
+                    <option value="Provisório">Provisório</option>
+                    <option value="Aguardando julgamento">Aguardando julgamento</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="tipo_penal">Tipo penal:</label>
+                <input type="text" name="tipo_penal" id="tipo_penal" required>
+            </div>
+
+            <div>
+                <label for="pena_anos">Pena aplicada (anos):</label>
+                <input type="number" name="pena_anos" id="pena_anos" min="0">
+            </div>
+
+            <div>
+                <label for="pena_meses">Pena aplicada (meses):</label>
+                <input type="number" name="pena_meses" id="pena_meses" min="0" max="11">
+            </div>
+
+            <div>
+                <label for="inicio_pena">Data de início da pena:</label>
+                <input type="date" name="inicio_pena" id="inicio_pena">
+            </div>
+
+            <div>
+                <label for="progressao">Data prevista para progressão:</label>
+                <input type="date" name="progressao" id="progressao">
+            </div>
+
+            <div>
+                <label for="soltura">Data prevista para soltura:</label>
+                <input type="date" name="soltura" id="soltura">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Saúde</legend>
+            <div>
+                <label for="doencas">Doenças pré-existentes:</label>
+                <textarea name="doencas" id="doencas" rows="2"></textarea>
+            </div>
+
+            <div>
+                <label for="medicamentos">Uso contínuo de medicamentos:</label>
+                <textarea name="medicamentos" id="medicamentos" rows="2"></textarea>
+            </div>
+
+            <div>
+                <label for="restricoes">Restrição alimentar:</label>
+                <textarea name="restricoes" id="restricoes" rows="2"></textarea>
+            </div>
+
+            <div>
+                <label for="historico_psico">Histórico psiquiátrico:</label>
+                <textarea name="historico_psico" id="historico_psico" rows="2"></textarea>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Contato de emergência / Visitante principal</legend>
+            <div>
+                <label for="contato_nome">Nome:</label>
+                <input type="text" name="contato_nome" id="contato_nome">
+            </div>
+
+            <div>
+                <label for="contato_parentesco">Parentesco:</label>
+                <input type="text" name="contato_parentesco" id="contato_parentesco">
+            </div>
+
+            <div>
+                <label for="contato_tel">Telefone:</label>
+                <input type="tel" name="contato_tel" id="contato_tel" pattern="\(?\d{2}\)?\s?\d{4,5}-?\d{4}">
+            </div>
+
+            <div>
+                <label for="contato_cpf">CPF do contato:</label>
+                <input type="number" name="contato_cpf" id="contato_cpf" maxlength="11" pattern="\d{11}">
+            </div>
+        </fieldset>
+
+        <div>
+            <button type="submit">Salvar cadastro</button>
+            <button type="reset">Limpar</button>
+        </div>
+    </form>
+    </main>
+    <footer>
+        <p><strong>Sistema de Dossiê de Detentos</strong> – Penitenciária de Palmas</p>
+        <p>Desenvolvido para uso exclusivo de servidores da segurança pública e justiça.<p>
+        <p>&copy; 2025 Governo do Estado do Tocantins – Todos os direitos reservados.</p>
+        <p>Versão 1.0 | Última atualização: Junho/2025</p>
+        <p>Contato técnico: <a href="https://github.com/paulosilvabr">Suporte Web</a>; <a href="mailto:pauloricardosousasilva10@gmail.com">suporte.ficticio@seguranca.to.gov.br</a></p>
+    </footer>
+
+</body>
+</html>
